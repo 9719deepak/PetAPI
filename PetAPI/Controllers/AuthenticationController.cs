@@ -11,7 +11,8 @@ namespace PetAPI.Controllers
 
         public AuthenticationController(JwtTokenService tokenService) => _tokenService = tokenService;
 
-        [HttpPost("login")]
+        [HttpPost]
+        [Route("login")]
         public IActionResult Login([FromBody] User user)
         {
             if (user.Username == "admin" && user.Password == "admin123")
